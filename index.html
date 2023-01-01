@@ -7,7 +7,7 @@
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
     />
     <title>
-      Canadian Flood Mapper
+      Farmers: Runoff Forecaster
     </title>
 
 	<!-- Load Leaflet from CDN -->
@@ -47,8 +47,8 @@
 
 <!-- Add the Dropdown for WS. -->
 <div style="float:top;" id="accs"> <!-- Add the top ribbon -->
-		<p id="DischargeLABEL">Show Farmers Runoff Forecast:</p>
-		<select name="simformat" id="simformat"><!-- Add the dropdown menu -->
+		<p id="mySelectCheckbox">Show Farmers Runoff Forecast:</p>
+		<select id="mySelect" onchange="myFunction()"><!-- Add the dropdown menu -->
 			<option value="" selected disabled hidden>Choose Prediction Length</option>
 				<option value="shortT">Short Term</option>
 				 <option value="medT">Medium Term</option>
@@ -100,9 +100,65 @@ function subteStyle(feature) {
   };
 }
 
+// Set up styles for watershed polygon
+function subteStyleM(feature) {
+  var colorToUse;
+  var poly = feature.properties.MidTerm;
+            
+  if (poly === "Low") colorToUse = "#FFDD26";
+  else if (poly === "Med") colorToUse = "#FF681C";
+  else if (poly === "High") colorToUse = "#CE2029";
+  else colorToUse = "#FF00FF05";
+            
+  return {
+    "fillColor": colorToUse,
+    "weight": 0.5,
+	"opacity": 1,
+	"color": '#808080',
+    "fillOpacity": 0.8
+  };
+}
 
-		
-		//Create a GeoJSON layer
+// Set up styles for watershed polygon
+function subteStyleL(feature) {
+  var colorToUse;
+  var poly = feature.properties.LongTerm;
+            
+  if (poly === "Low") colorToUse = "#FFDD26";
+  else if (poly === "Med") colorToUse = "#FF681C";
+  else if (poly === "High") colorToUse = "#CE2029";
+  else colorToUse = "#FF00FF05";
+            
+  return {
+    "fillColor": colorToUse,
+    "weight": 0.5,
+	"opacity": 1,
+	"color": '#808080',
+    "fillOpacity": 0.8
+  };
+}
+
+// Set up styles for watershed polygon
+function subteStyleXL(feature) {
+  var colorToUse;
+  var poly = feature.properties.XLTerm;
+            
+  if (poly === "Low") colorToUse = "#FFDD26";
+  else if (poly === "Med") colorToUse = "#FF681C";
+  else if (poly === "High") colorToUse = "#CE2029";
+  else colorToUse = "#FF00FF05";
+            
+  return {
+    "fillColor": colorToUse,
+    "weight": 0.5,
+	"opacity": 1,
+	"color": '#808080',
+    "fillOpacity": 0.8
+  };
+}
+
+
+		//Create a GeoJSON layer - short term
 		var geojsonLayer = new L.GeoJSON(geojsonLayer, {
 			style: subteStyle
 		}).addTo(mymap);
@@ -116,6 +172,74 @@ function subteStyle(feature) {
 				geojsonLayer.addData(data);
 		}
 		}).error(function() {});
+		
+		
+		//Create a GeoJSON layer - MED term
+		var geojsonLayerM = new L.GeoJSON(geojsonLayerM, {
+			style: subteStyleM
+		});
+		//Request the GeoJson data from GitHub using Ajax
+		$.ajax({
+		dataType: "json",
+		url: Catchment_url,
+		success: function(data) {
+				geojsonLayerM.addData(data);
+		}
+		}).error(function() {});
+		
+		//Create a GeoJSON layer - LONG term
+		var geojsonLayerL = new L.GeoJSON(geojsonLayerL, {
+			style: subteStyleL
+		});
+		//Request the GeoJson data from GitHub using Ajax
+		$.ajax({
+		dataType: "json",
+		url: Catchment_url,
+		success: function(data) {
+				geojsonLayerL.addData(data);
+		}
+		}).error(function() {});
+		
+		//Create a GeoJSON layer - XL term
+		var geojsonLayerXL = new L.GeoJSON(geojsonLayerXL, {
+			style: subteStyleXL
+		});
+		//Request the GeoJson data from GitHub using Ajax
+		$.ajax({
+		dataType: "json",
+		url: Catchment_url,
+		success: function(data) {
+				geojsonLayerXL.addData(data);
+		}
+		}).error(function() {});
+		
+		
+		
+		
+		
+var selectLayers = {
+    geojsonLayer, // same as cities: cities
+  geojsonLayerM,
+  geojsonLayerL,
+  geojsonLayerXL
+}
+
+var legend = L.control({position: 'topright'});
+legend.onAdd = function (mymap) {
+    var div = L.DomUtil.create('div', 'info legend');
+    div.innerHTML = '<select><option value="geojsonLayer">Short Term</option><option value="geojsonLayerM">Medium Term</option><option value="geojsonLayerL">Long Term</option><option value="geojsonLayerXL">XLong Term</option></select>';
+    L.DomEvent.disableClickPropagation(div);
+    L.DomEvent.on(div,'change',function(e){
+     	var select = e.target;
+      for(var name in selectLayers){
+        selectLayers[name].removeFrom(mymap);
+      }
+      selectLayers[select.value].addTo(mymap);
+    });
+    return div;
+};
+legend.addTo(mymap);
+		
 		</script>
 
 
