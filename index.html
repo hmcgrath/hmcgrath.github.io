@@ -45,23 +45,13 @@
 </head>
 <body>
 
-<!-- Add the Dropdown for WS. -->
-<div style="float:top;" id="accs"> <!-- Add the top ribbon -->
-		<p id="mySelectCheckbox">Show Farmers Runoff Forecast:</p>
-		<select id="mySelect" onchange="myFunction()"><!-- Add the dropdown menu -->
-			<option value="" selected disabled hidden>Choose Prediction Length</option>
-				<option value="shortT">Short Term</option>
-				 <option value="medT">Medium Term</option>
-				 <option value="longT">Long Term</option>
-				 <option value="xlT">X-Long Term</option>
-			
-		</select>
 		
 		<script src="Top_Ribbon.js"></script>
 	</div>
 
 
  <div id="mapid"></div>
+
 <script>
 
 		const mymap = L.map("mapid").setView([43.356, -80.316], 6);
@@ -239,6 +229,10 @@ legend.onAdd = function (mymap) {
     return div;
 };
 legend.addTo(mymap);
+
+
+
+
 		
 		</script>
 
