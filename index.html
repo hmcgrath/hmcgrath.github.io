@@ -62,16 +62,33 @@
          *************************/
 
 		// Define the symbology of the catchment polygons
-		var myStyle = {
-			"color": "#f50515",
-			"fillOpacity": .50,
-			"weight": 1,
-			"opacity": 0.65
-		};
+// Set up styles for subway lines
+ 
+
+// Set up styles for watershed polygon
+function subteStyle(feature) {
+  var colorToUse;
+  var poly = feature.properties.ShortTerm;
+            
+  if (poly === "Low") colorToUse = "#FFDD26";
+  else if (poly === "Med") colorToUse = "#FF681C";
+  else if (poly === "High") colorToUse = "#CE2029";
+  else colorToUse = "#FF00FF05";
+            
+  return {
+    "fillColor": colorToUse,
+    "weight": 0.5,
+	"opacity": 1,
+	"color": '#808080',
+    "fillOpacity": 0.8
+  };
+}
+
+
 		
 		//Create a GeoJSON layer
 		var geojsonLayer = new L.GeoJSON(geojsonLayer, {
-			style: myStyle
+			style: subteStyle
 		}).addTo(mymap);
 
 		//Request the GeoJson data from GitHub using Ajax
