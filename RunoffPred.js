@@ -26,7 +26,7 @@
 		}).addTo(mymap);
 
 		//Request the GeoJson data from GitHub using Ajax
-		const Catchment_url = "https://hmcgrath.github.io/idea75/data/Small2.geojson";
+		const Catchment_url = "https://hmcgrath.github.io/data/Small2.geojson";
 		$.ajax({
 		dataType: "json",
 		url: Catchment_url,
