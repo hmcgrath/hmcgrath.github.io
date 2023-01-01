@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<!-- saved from url=(0051)https://leafletjs.com/examples/geojson/example.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<!--<base target="_top">--><base href="." target="_top">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<title>GoC Runoff Predictor</title>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>
+      Canadian Flood Mapper
+    </title>
 
+	<!-- Load Leaflet from CDN -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+	  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+	  crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+	  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+	  crossorigin=""></script>
+
+	<!-- Leaflet-GeoTIFF-2 Library & Dependancies (GeoTiff.js and plotty.js)-->
+	<script src="https://unpkg.com/geotiff@1.0.0-beta.13/dist-browser/geotiff.js"></script>
+    <script src="https://unpkg.com/plotty@0.4.1/dist/plotty.js"></script>
+    <script src="https://unpkg.com/leaflet-geotiff-2@0.2.5/dist/leaflet-geotiff.js"></script>
+    <script src="https://unpkg.com/leaflet-geotiff-2@0.2.5/dist/leaflet-geotiff-plotty.js"></script>	
 	
-	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-     crossorigin=""/>
-	
- <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-     crossorigin=""></script>
-	 <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-	 <script src="https://rawgit.com/hmcgrath/idea75/main/blob/data/Small2.geojson"   type="text/javascript" > </script>
-	
+	<!-- Load JQuery Library (translate between Javascript and Json) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 	<style>
 		html, body {
@@ -37,7 +46,42 @@
 <body>
 
  <div id="mapid"></div>
-<script src="RunoffPred.js"></script>
+<script>
+
+		const mymap = L.map("mapid").setView([43.356, -80.316], 6);
+		L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+			maxZoom: 19,
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(mymap);
+		 
+		 /*************************
+		 
+		 
+ * Add a GEOJson layer - Catchment Polygons
+         *************************/
+		// Define the symbology of the catchment polygons
+		var myStyle = {
+			"color": "#f50515",
+			"fillOpacity": 0,
+			"weight": 5,
+			"opacity": 0.65
+		};
+		
+		//Create a GeoJSON layer
+		var geojsonLayer = new L.GeoJSON(geojsonLayer, {
+			style: myStyle
+		}).addTo(mymap);
+
+		//Request the GeoJson data from GitHub using Ajax
+		const Catchment_url = "https://hmcgrath.github.io/data/Small2.geojson";
+		$.ajax({
+		dataType: "json",
+		url: Catchment_url,
+		success: function(data) {
+				geojsonLayer.addData(data);
+		}
+		}).error(function() {});
+		</script>
 
 
 </body></html>
