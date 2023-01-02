@@ -30,46 +30,32 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 	<style>
-		html, body {
-			height: 100%;
-			margin: 0;
+	 html,body {
+		  height: 100%;
+		  width: 100%;
+		 
 		}
-		.h1{
-		margin-top:0;
-		font-size:1.7em;
-		border-bottom: 1px solid #af3c43;
-		margin-bottom: 0.2em;
-		margin-top: 1em;
-		padding-bottom: 0.2em;
-		font-family: Lato,sans-serif;
-		line-height: 1.1;
-		color: inherit;
-		margin: 0.67em 0;
-		}
-		
-		
-			.hero-image {
-			  background-image:  url("https://hmcgrath.github.io/header_img.png");
+	.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image:url("https://hmcgrath.github.io/header_img.png");
 
-			 
-			  height: 50%;
+  /* Set a specific height */
+  height: 50%;
 
-			  /* Position and center the image to scale nicely on all screens */
-			  background-position: center;
-			  background-repeat: no-repeat;
-			  background-size: cover;
-			  position: relative;
-			}
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
 
-			
-		
-		
-		.leaflet-container {
+
+		#leaflet-container {
 			height: 400;
 			width: 400;
-			max-width: 80%;
-			max-height: 80%;
-			position: center
+			max-width: 100%;
+			max-height: 75%;
+			position: relative
 		}
 	</style>
 	
@@ -77,6 +63,8 @@
 	
 </head>
 <body>
+
+
 <div class="hero-image">
   
 </div>
@@ -86,7 +74,10 @@
 	</div>
 
 
- <div id="mapid"></div>
+<img src="https://hmcgrath.github.io/legend/Legend.png" alt="legend" width="150" height="150">
+
+
+ <div id="mapid", align="center" ></div>
 
 <script>
 
@@ -270,7 +261,6 @@ legend.addTo(mymap);
 		
 		</script>
 
-<img src="https://hmcgrath.github.io/legend/Legend.png" alt="legend" width="150" height="100">
 
 </body>
 
