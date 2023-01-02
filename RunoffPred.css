@@ -30,9 +30,6 @@
 			#hero-image {
 			  background-image:  url("https://hmcgrath.github.io/header_img.png");
 
-			 
-			  height: 50%;
-
 			  /* Position and center the image to scale nicely on all screens */
 			  background-position: center;
 			  background-repeat: no-repeat;
