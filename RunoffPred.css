@@ -10,5 +10,43 @@
 		#mapid {
 		  height: 85%;
 		  width: 100%;
-		  position: relative;
+		  position: center;
+		}
+		
+		#h1{
+		margin-top:0;
+		font-size:1.7em;
+		border-bottom: 1px solid #af3c43;
+		margin-bottom: 0.2em;
+		margin-top: 1em;
+		padding-bottom: 0.2em;
+		font-family: Lato,sans-serif;
+		line-height: 1.1;
+		color: inherit;
+		margin: 0.67em 0;
+		}
+		
+		
+			#hero-image {
+			  background-image:  url("https://hmcgrath.github.io/header_img.png");
+
+			 
+			  height: 50%;
+
+			  /* Position and center the image to scale nicely on all screens */
+			  background-position: center;
+			  background-repeat: no-repeat;
+			  background-size: cover;
+			  position: relative;
+			}
+
+			
+		
+		
+		#leaflet-container {
+			height: 400;
+			width: 400;
+			max-width: 80%;
+			max-height: 80%;
+			position: center
 		}
