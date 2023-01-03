@@ -82,7 +82,7 @@
 
 <script>
 
-		const mymap = L.map("mapid").setView([43.356, -80.316], 6);
+		const mymap = L.map("mapid").setView([44.13, -80.316], 10);
 		L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 			maxZoom: 19,
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -108,11 +108,10 @@ function subteStyle(feature) {
   else if (poly === "40") colorToUse = "#93B79F";
   else if (poly === "50") colorToUse = "#BECD85";
   else if (poly === "60") colorToUse = "#E8E56D";
-  else if (poly === "70") colorToUse = "#FF8B2D;
+  else if (poly === "70") colorToUse = "#FF8B2D";
   else if (poly === "80") colorToUse = "#FF621E";
   else if (poly === "90") colorToUse = "#FF2512";
   else if (poly === "100") colorToUse = "#FF2512";
-  else colorToUse = "#FF00FF05";
             
   return {
     "fillColor": colorToUse,
@@ -133,11 +132,10 @@ function subteStyleM(feature) {
   else if (poly === "40") colorToUse = "#93B79F";
   else if (poly === "50") colorToUse = "#BECD85";
   else if (poly === "60") colorToUse = "#E8E56D";
-  else if (poly === "70") colorToUse = "#FF8B2D;
+  else if (poly === "70") colorToUse = "#FF8B2D";
   else if (poly === "80") colorToUse = "#FF621E";
   else if (poly === "90") colorToUse = "#FF2512";
   else if (poly === "100") colorToUse = "#FF2512";
-  
             
   return {
     "fillColor": colorToUse,
@@ -158,7 +156,7 @@ function subteStyleL(feature) {
   else if (poly === "40") colorToUse = "#93B79F";
   else if (poly === "50") colorToUse = "#BECD85";
   else if (poly === "60") colorToUse = "#E8E56D";
-  else if (poly === "70") colorToUse = "#FF8B2D;
+  else if (poly === "70") colorToUse = "#FF8B2D";
   else if (poly === "80") colorToUse = "#FF621E";
   else if (poly === "90") colorToUse = "#FF2512";
   else if (poly === "100") colorToUse = "#FF2512";
@@ -182,7 +180,7 @@ function subteStyleXL(feature) {
   else if (poly === "40") colorToUse = "#93B79F";
   else if (poly === "50") colorToUse = "#BECD85";
   else if (poly === "60") colorToUse = "#E8E56D";
-  else if (poly === "70") colorToUse = "#FF8B2D;
+  else if (poly === "70") colorToUse = "#FF8B2D";
   else if (poly === "80") colorToUse = "#FF621E";
   else if (poly === "90") colorToUse = "#FF2512";
   else if (poly === "100") colorToUse = "#FF2512";
