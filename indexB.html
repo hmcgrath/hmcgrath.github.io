@@ -36,7 +36,6 @@
 		 
 		}
 	.hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image:url("https://hmcgrath.github.io/header_img.png");
 
   /* Set a specific height */
@@ -72,14 +71,14 @@
 </div>
 
 		<h1> Farmers Forecast - runoff potential </h1>
-		<script src="Top_Ribbon.js"></script>
+		
 	</div>
 
 
-<img src="https://hmcgrath.github.io/legend/Legend2.png" alt="legend" width="150" height="150">
+<img src="https://hmcgrath.github.io/legend/legend2.png" alt="legend" width="300" height="50">
 
 
- <div id="mapid", align="center" ></div>
+ <div id="mapid" ></div>
 
 <script>
 
@@ -103,11 +102,16 @@
 // Set up styles for watershed polygon
 function subteStyle(feature) {
   var colorToUse;
-  var poly = feature.properties.ShortTerm;
-            
-  if (poly === "Low") colorToUse = "#FFDD26";
-  else if (poly === "Med") colorToUse = "#FF681C";
-  else if (poly === "High") colorToUse = "#CE2029";
+  var poly = feature.properties.STerm;
+  if (poly === "20") colorToUse = "#1F88C7";
+  else if (poly === "30") colorToUse = "#63A1B5";
+  else if (poly === "40") colorToUse = "#93B79F";
+  else if (poly === "50") colorToUse = "#BECD85";
+  else if (poly === "60") colorToUse = "#E8E56D";
+  else if (poly === "70") colorToUse = "#FF8B2D;
+  else if (poly === "80") colorToUse = "#FF621E";
+  else if (poly === "90") colorToUse = "#FF2512";
+  else if (poly === "100") colorToUse = "#FF2512";
   else colorToUse = "#FF00FF05";
             
   return {
@@ -122,7 +126,7 @@ function subteStyle(feature) {
 // Set up styles for watershed polygon
 function subteStyleM(feature) {
   var colorToUse;
-  var poly = feature.properties.MidTerm;
+  var poly = feature.properties.MTerm;
             
   if (poly === "20") colorToUse = "#1F88C7";
   else if (poly === "30") colorToUse = "#63A1B5";
@@ -133,7 +137,6 @@ function subteStyleM(feature) {
   else if (poly === "80") colorToUse = "#FF621E";
   else if (poly === "90") colorToUse = "#FF2512";
   else if (poly === "100") colorToUse = "#FF2512";
-  else colorToUse = "#FF00FF05";
   
             
   return {
@@ -148,7 +151,7 @@ function subteStyleM(feature) {
 // Set up styles for watershed polygon
 function subteStyleL(feature) {
   var colorToUse;
-  var poly = feature.properties.LongTerm;
+  var poly = feature.properties.LTerm;
             
   if (poly === "20") colorToUse = "#1F88C7";
   else if (poly === "30") colorToUse = "#63A1B5";
@@ -159,7 +162,6 @@ function subteStyleL(feature) {
   else if (poly === "80") colorToUse = "#FF621E";
   else if (poly === "90") colorToUse = "#FF2512";
   else if (poly === "100") colorToUse = "#FF2512";
-  else colorToUse = "#FF00FF05";
             
   return {
     "fillColor": colorToUse,
@@ -173,7 +175,7 @@ function subteStyleL(feature) {
 // Set up styles for watershed polygon
 function subteStyleXL(feature) {
   var colorToUse;
-  var poly = feature.properties.XLTerm;
+  var poly = feature.properties.XL_Term;
             
   if (poly === "20") colorToUse = "#1F88C7";
   else if (poly === "30") colorToUse = "#63A1B5";
@@ -184,7 +186,6 @@ function subteStyleXL(feature) {
   else if (poly === "80") colorToUse = "#FF621E";
   else if (poly === "90") colorToUse = "#FF2512";
   else if (poly === "100") colorToUse = "#FF2512";
-  else colorToUse = "#FF00FF05";
             
   return {
     "fillColor": colorToUse,
