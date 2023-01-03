@@ -102,8 +102,9 @@
 // Set up styles for watershed polygon
 function subteStyle(feature) {
   var colorToUse;
-  var poly = feature.properties.STerm;
+  var poly = feature.properties.Sterm;
   if (poly === "20") colorToUse = "#1F88C7";
+  else if (poly === "30") colorToUse = "#1F88C7";
   else if (poly === "30") colorToUse = "#63A1B5";
   else if (poly === "40") colorToUse = "#93B79F";
   else if (poly === "50") colorToUse = "#BECD85";
@@ -112,10 +113,11 @@ function subteStyle(feature) {
   else if (poly === "80") colorToUse = "#FF621E";
   else if (poly === "90") colorToUse = "#FF2512";
   else if (poly === "100") colorToUse = "#FF2512";
+  else colorToUse = "#FF00FF05";
             
   return {
     "fillColor": colorToUse,
-    "weight": 0.5,
+    "weight": 0.25,
 	"opacity": 1,
 	"color": '#808080',
     "fillOpacity": 0.8
@@ -128,6 +130,7 @@ function subteStyleM(feature) {
   var poly = feature.properties.MTerm;
             
   if (poly === "20") colorToUse = "#1F88C7";
+  else if (poly === "30") colorToUse = "#1F88C7";
   else if (poly === "30") colorToUse = "#63A1B5";
   else if (poly === "40") colorToUse = "#93B79F";
   else if (poly === "50") colorToUse = "#BECD85";
@@ -136,10 +139,11 @@ function subteStyleM(feature) {
   else if (poly === "80") colorToUse = "#FF621E";
   else if (poly === "90") colorToUse = "#FF2512";
   else if (poly === "100") colorToUse = "#FF2512";
+  else colorToUse = "#FF00FF05";
             
   return {
     "fillColor": colorToUse,
-    "weight": 0.5,
+    "weight": 0.25,
 	"opacity": 1,
 	"color": '#808080',
     "fillOpacity": 0.8
@@ -152,6 +156,7 @@ function subteStyleL(feature) {
   var poly = feature.properties.LTerm;
             
   if (poly === "20") colorToUse = "#1F88C7";
+  else if (poly === "30") colorToUse = "#1F88C7";
   else if (poly === "30") colorToUse = "#63A1B5";
   else if (poly === "40") colorToUse = "#93B79F";
   else if (poly === "50") colorToUse = "#BECD85";
@@ -160,10 +165,11 @@ function subteStyleL(feature) {
   else if (poly === "80") colorToUse = "#FF621E";
   else if (poly === "90") colorToUse = "#FF2512";
   else if (poly === "100") colorToUse = "#FF2512";
+  else colorToUse = "#FF00FF05";
             
   return {
     "fillColor": colorToUse,
-    "weight": 0.5,
+    "weight": 0.25,
 	"opacity": 1,
 	"color": '#808080',
     "fillOpacity": 0.8
@@ -176,6 +182,7 @@ function subteStyleXL(feature) {
   var poly = feature.properties.XL_Term;
             
   if (poly === "20") colorToUse = "#1F88C7";
+  else if (poly === "30") colorToUse = "#1F88C7";
   else if (poly === "30") colorToUse = "#63A1B5";
   else if (poly === "40") colorToUse = "#93B79F";
   else if (poly === "50") colorToUse = "#BECD85";
@@ -184,10 +191,11 @@ function subteStyleXL(feature) {
   else if (poly === "80") colorToUse = "#FF621E";
   else if (poly === "90") colorToUse = "#FF2512";
   else if (poly === "100") colorToUse = "#FF2512";
+  else colorToUse = "#FF00FF05";
             
   return {
     "fillColor": colorToUse,
-    "weight": 0.5,
+    "weight": 0.25,
 	"opacity": 1,
 	"color": '#808080',
     "fillOpacity": 0.8
