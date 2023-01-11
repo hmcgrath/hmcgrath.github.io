@@ -273,7 +273,7 @@ var selectLayers = {
 var legend = L.control({position: 'topleft'});
 legend.onAdd = function (mymap) {
     var div = L.DomUtil.create('div', 'info legend');
-    div.innerHTML = '<select><option value="geojsonLayer">Short Term</option><option value="geojsonLayerM">Medium Term</option><option value="geojsonLayerL">Long Term</option><option value="geojsonLayerXL">XLong Term</option></select>';
+    div.innerHTML = '<select><option value="geojsonLayer">Today</option><option value="geojsonLayerM">Tomorrow Term</option><option value="geojsonLayerL">7 day forecast</option><option value="geojsonLayerXL">10 day forecast</option></select>';
     L.DomEvent.disableClickPropagation(div);
     L.DomEvent.on(div,'change',function(e){
      	var select = e.target;

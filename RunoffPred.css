@@ -13,4 +13,289 @@
 		  position: center;
 		}
 	
+	@media screen and (max-width: 767px) {
+      .sidenav {
+       padding: 9px 0;
+      }
+      .row.content {height:auto;} 
+    }
+	.box{ 
+  	background-color: yellow;
+	  position: absolute;
+	  height: 60%;
+	  width: 100%;
+	  left: 5%;
+	  top: 5%;
+}
+body {
+    font-family: "Helvetica",sans-serif;
+    font-size: 15px;
+    line-height: 1.2;
+    color: #333;
+    background-color: #fff;
+	padding-left: 2px;
+	padding-right: 2px
+    
+	}
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  width:30%;
+  padding-left: 2px;
+  padding-right: 2px;
+  float:left;
+  height:100%;
+  display:inline-block;
+  background-color: #FCFDFE;
+  border: 1px solid #fff293;
+  height: 600px;
+}
+.rightbar {
+  width:70%;
+   float:right;
+   height:100%;
+   padding-right: 2px
+  display:inline-block;
+  height: 600px;
+   background-color: #FCFDFE;
+  border: 1px solid #fff293;
+}
+
+
+h1{
+	font-size: 24px;
+	font-family: "Arial";
+	font-weight: bold;
+	color: #3585BF;
+}
+a {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    text-decoration: none
+}
+
+.main_search {
+    position: relative;
+    text-align: center
+}
+
+.main_search span {
+    display: inline;
+    margin: 0 10px 0 0
+}
+
+.m_search {
+    font-size: 14px;
+    border: 4px solid #fff293;
+    width: 35%;
+    color: #999;
+    padding: 0 15px;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-weight: 300;
+    height: 48px;
+    margin: 0
+}
+
+.m_search:focus {
+    outline-color: transparent;
+    outline-style: none;
+    border: 4px solid fff293;
+    color: #222;
+    background-color: #fff293
+}
+
+.add_button {
+    font-size: px;
+    border: 4px solid #fff293;
+    color: #222;
+    padding: 0 20px;
+    background-color: #fff293;
+    font-weight: 300;
+    cursor: pointer;
+    height: 72px;
+    margin: 0
+}
+
+.hits {
+    margin-top: 150px;
+    text-align: center;
+    margin-top: 40px;
+    box-sizing: border-box;
+}
+
+.hits ul {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0px
+}
+
+.hits ul li {
+    margin: 0;
+    padding: 5px 10px 5px 0;
+    display: inline-block
+}
+
+.hits ul li a {
+    margin: 0;
+    padding: 5px 15px;
+    background-color: #438cb0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 20px;
+    display: inline-block
+}
+
+.hits ul li a:hover {
+    background-color: #642a2a
+}
+
+.hits ul li a span {
+    margin: 0;
+    padding: 0 0 0 20px;
+    font-weight: 400;
+    color: #222
+}
+
+.hits ul li a:hover span {
+    color: #fff
+}
+
+.modal_msg {
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 0;
+    font-size: 1px;
+    color: #fff;
+    background-color: #642a2a;
+    font-weight: 700;
+    position: absolute
+}
+
+.cssmodalhidden {
+    display: none
+}
+
+.divauto {
+    position: relative;
+    display: inline;
+}
+
+#olAuto {
+    position: relative;
+    max-width: 730px;
+    background: #fff293;
+    color: #666666;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+
+#olAuto>li {
+    cursor: pointer;
+    color: grey;
+    font-size: 100%;
+    line-height: initial;
+    /* margin-left: 30px; */
+    text-align: left;
+    list-style-type: none;
+}
+
+#olAuto>li:hover {
+    color: black;
+}
+
+#add_btn {
+    margin-left: 12%;
+    display: inline-block;
+}
+
+#show_btn {
+    margin-left: 0.1%;
+    display: inline-block;
+}
+
 	
+	.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+ .banner_fluid {
+   padding-left:0;
+   padding-right:0;
+}
+
+
+ 
+  div.ex1 {
+  overflow: scroll;
+  width: 100%;  
+}
+
+  div.ex2 {
+  background-color: #fff293;
+  width: 100%;
+  
+}
+
+/* Main Level */
+ul{
+padding-left: 10px;
+  margin-left:4px;
+}
+
+/* Second Level */
+li{
+padding-left: 10px;
+  margin-left:5px;
+}
+
+/* Third Level */
+li li{
+  margin-left:10px;
+}
+.wrapper{
+  width:95%;
+  overflow:auto;
+  
+}
+@media(max-width:992px){
+ .wrapper{
+  width:100%;
+  overflow-x:auto;
+  height:600px;
+	} 
+}
+.panel-heading {
+  padding: 0;
+	border:0;
+}
+.panel-title>a, .panel-title>a:active{
+	display:block;
+	padding:2px;
+    color:#555;
+    font-size:16px;
+    font-weight:bold;
+	text-transform:uppercase;
+	letter-spacing:1px;
+    word-spacing:3px;
+	text-decoration:none;
+}
+.panel-heading  a:before {
+   font-family: 'Glyphicons Halflings';
+   content: "\e114";
+   float: right;
+   transition: all 0.5s;
+}
+.panel-heading.active a:before {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+} 
