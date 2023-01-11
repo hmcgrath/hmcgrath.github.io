@@ -7,104 +7,6 @@
       name="viewport"
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
     />
-    <title>
-      Agri-Weather
-    </title>
-
-	<!-- Load Leaflet from CDN -->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-	  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-	  crossorigin=""/>
-	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-	  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-	  crossorigin=""></script>
-
-	<!-- Leaflet-GeoTIFF-2 Library & Dependancies (GeoTiff.js and plotty.js)-->
-	<script src="https://unpkg.com/geotiff@1.0.0-beta.13/dist-browser/geotiff.js"></script>
-    <script src="https://unpkg.com/plotty@0.4.1/dist/plotty.js"></script>
-    <script src="https://unpkg.com/leaflet-geotiff-2@0.2.5/dist/leaflet-geotiff.js"></script>
-    <script src="https://unpkg.com/leaflet-geotiff-2@0.2.5/dist/leaflet-geotiff-plotty.js"></script>	
-	
-	<!-- Load JQuery Library (translate between Javascript and Json) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-	<style>
-	 html,body {
-		  height: 100%;
-		  width: 100%;
-		 
-		}
-	.hero-image {
-  background-image:url("https://hmcgrath.github.io/header_img.png");
-
-  /* Set a specific height */
-  height: 55%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-
-		#leaflet-container {
-			height: 400;
-			width: 400;
-			max-width: 100%;
-			max-height: 75%;
-			position: relative
-		}
-		
-
-	</style>
-	
-	 <link rel="stylesheet" href="RunoffPred.css" />
-	
-</head>
-<body>
-
-
-<div class="hero-image">
-  
-</div>
-
-		<h1> Agri-Weather </h1>
-		
-	</div>
-
-
-<img src="https://hmcgrath.github.io/legend/legend2.png" alt="legend" width="380" height="70">
-
-
- <div id="mapid" ></div>
-
-<script>
-
-		const mymap = L.map("mapid").setView([44.13, -80.316], 10);
-		L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-			maxZoom: 19,
-			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-		}).addTo(mymap);
-		 
-		 /*************************
-		 
-		
-		 
- * Add a GEOJson layer - Catchment Polygons
-         *************************/
-
-		// Define the symbology of the catchment polygons
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="initial-scale=1,maximum-scale=1,user-scalable=no"
-    />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -407,11 +309,14 @@ function resolveLocationId(locationId)
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
       <center>
-	  <img src="https://geo.weather.gc.ca/geomet?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&BBOX=-9291073.662119744,5195271.938486859,-8024053.481264663,5929067.410024552&CRS=EPSG:3857&WIDTH=600&HEIGHT=301&LAYERS=GDPS.ETA_TT&FORMAT=image/png&transparent=TRUE">
+	  <img src="https://hmcgrath.github.io/legend/precip.png" alt='precip sample'>
 	  <p>
 	  <img src="https://hmcgrath.github.io/legend/accumulation.png" alt='accum'>
 	  </center>
-	 <!-- add script here for random:-->
+	 <!-- 
+	 <img src="https://geo.weather.gc.ca/geomet?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&BBOX=-9291073.662119744,5195271.938486859,-8024053.481264663,5929067.410024552&CRS=EPSG:3857&WIDTH=600&HEIGHT=301&LAYERS=GDPS.ETA_TT&FORMAT=image/png&transparent=TRUE">
+	  <p>
+	  -->
 
 
 	</font>
@@ -632,7 +537,6 @@ function subteStyleXL(feature) {
 		}
 		}).error(function() {});
 		
-		
 		//Create a GeoJSON layer - MED term
 		var geojsonLayerM = new L.GeoJSON(geojsonLayerM, {
 			style: subteStyleM
@@ -702,81 +606,6 @@ legend.addTo(mymap);
 
 		</script>
 </div> 
-</body>
-
-</html>
-		
-		
-		//Create a GeoJSON layer - MED term
-		var geojsonLayerM = new L.GeoJSON(geojsonLayerM, {
-			style: subteStyleM
-		});
-		//Request the GeoJson data from GitHub using Ajax
-		$.ajax({
-		dataType: "json",
-		url: Catchment_url,
-		success: function(data) {
-				geojsonLayerM.addData(data);
-		}
-		}).error(function() {});
-		
-		//Create a GeoJSON layer - LONG term
-		var geojsonLayerL = new L.GeoJSON(geojsonLayerL, {
-			style: subteStyleL
-		});
-		//Request the GeoJson data from GitHub using Ajax
-		$.ajax({
-		dataType: "json",
-		url: Catchment_url,
-		success: function(data) {
-				geojsonLayerL.addData(data);
-		}
-		}).error(function() {});
-		
-		//Create a GeoJSON layer - XL term
-		var geojsonLayerXL = new L.GeoJSON(geojsonLayerXL, {
-			style: subteStyleXL
-		});
-		//Request the GeoJson data from GitHub using Ajax
-		$.ajax({
-		dataType: "json",
-		url: Catchment_url,
-		success: function(data) {
-				geojsonLayerXL.addData(data);
-		}
-		}).error(function() {});
-		
-		
-		
-		
-		
-var selectLayers = {
-    geojsonLayer, // same as cities: cities
-  geojsonLayerM,
-  geojsonLayerL,
-  geojsonLayerXL
-}
-
-var legend = L.control({position: 'topleft'});
-legend.onAdd = function (mymap) {
-    var div = L.DomUtil.create('div', 'info legend');
-    div.innerHTML = '<select><option value="geojsonLayer">Today</option><option value="geojsonLayerM">Tomorrow </option><option value="geojsonLayerL">7 day forecast</option><option value="geojsonLayerXL">10 day forecast</option></select>';
-    L.DomEvent.disableClickPropagation(div);
-    L.DomEvent.on(div,'change',function(e){
-     	var select = e.target;
-      for(var name in selectLayers){
-        selectLayers[name].removeFrom(mymap);
-      }
-      selectLayers[select.value].addTo(mymap);
-    });
-    return div;
-};
-legend.addTo(mymap);
-
-
-		</script>
-
-
 </body>
 
 </html>
