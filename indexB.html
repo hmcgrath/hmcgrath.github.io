@@ -294,7 +294,8 @@ function resolveLocationId(locationId)
     </div>
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
-       <p>
+      <h2> Probability of Runoff (%)</h2>
+	   <p>
 	   <img src="https://hmcgrath.github.io/legend/legend2.png" alt="legend" width="500" height="100">
 </ul>
       </div>
@@ -423,16 +424,16 @@ Radar precipitation rate (Rain)
 function subteStyle(feature) {
   var colorToUse;
   var poly = feature.properties.Sterm;
-  if (poly === "20") colorToUse = "#1F88C7";
-  else if (poly === "30") colorToUse = "#1F88C7";
-  else if (poly === "30") colorToUse = "#63A1B5";
-  else if (poly === "40") colorToUse = "#93B79F";
-  else if (poly === "50") colorToUse = "#BECD85";
-  else if (poly === "60") colorToUse = "#E8E56D";
-  else if (poly === "70") colorToUse = "#FF8B2D";
-  else if (poly === "80") colorToUse = "#FF621E";
-  else if (poly === "90") colorToUse = "#FF2512";
-  else if (poly === "100") colorToUse = "#FF2512";
+  if (poly === "20") colorToUse = "#fff7ec";
+  else if (poly === "30") colorToUse = "#fff7ec";
+  else if (poly === "30") colorToUse = "#fdd49e";
+  else if (poly === "40") colorToUse = "#fdbb84";
+  else if (poly === "50") colorToUse = "#fc8d59";
+  else if (poly === "60") colorToUse = "#ef6548";
+  else if (poly === "70") colorToUse = "#d7301f";
+  else if (poly === "80") colorToUse = "#b30000";
+  else if (poly === "90") colorToUse = "#7f0000";
+  else if (poly === "100") colorToUse = "#7f0000";
   else colorToUse = "#FF00FF05";
             
   return {
@@ -448,17 +449,16 @@ function subteStyle(feature) {
 function subteStyleM(feature) {
   var colorToUse;
   var poly = feature.properties.MTerm;
-            
-  if (poly === "20") colorToUse = "#1F88C7";
-  else if (poly === "30") colorToUse = "#1F88C7";
-  else if (poly === "30") colorToUse = "#63A1B5";
-  else if (poly === "40") colorToUse = "#93B79F";
-  else if (poly === "50") colorToUse = "#BECD85";
-  else if (poly === "60") colorToUse = "#E8E56D";
-  else if (poly === "70") colorToUse = "#FF8B2D";
-  else if (poly === "80") colorToUse = "#FF621E";
-  else if (poly === "90") colorToUse = "#FF2512";
-  else if (poly === "100") colorToUse = "#FF2512";
+  if (poly === "20") colorToUse = "#fff7ec";
+  else if (poly === "30") colorToUse = "#fff7ec";
+  else if (poly === "30") colorToUse = "#fdd49e";
+  else if (poly === "40") colorToUse = "#fdbb84";
+  else if (poly === "50") colorToUse = "#fc8d59";
+  else if (poly === "60") colorToUse = "#ef6548";
+  else if (poly === "70") colorToUse = "#d7301f";
+  else if (poly === "80") colorToUse = "#b30000";
+  else if (poly === "90") colorToUse = "#7f0000";
+  else if (poly === "100") colorToUse = "#7f0000";
   else colorToUse = "#FF00FF05";
             
   return {
@@ -474,17 +474,16 @@ function subteStyleM(feature) {
 function subteStyleL(feature) {
   var colorToUse;
   var poly = feature.properties.LTerm;
-            
-  if (poly === "20") colorToUse = "#1F88C7";
-  else if (poly === "30") colorToUse = "#1F88C7";
-  else if (poly === "30") colorToUse = "#63A1B5";
-  else if (poly === "40") colorToUse = "#93B79F";
-  else if (poly === "50") colorToUse = "#BECD85";
-  else if (poly === "60") colorToUse = "#E8E56D";
-  else if (poly === "70") colorToUse = "#FF8B2D";
-  else if (poly === "80") colorToUse = "#FF621E";
-  else if (poly === "90") colorToUse = "#FF2512";
-  else if (poly === "100") colorToUse = "#FF2512";
+  if (poly === "20") colorToUse = "#fff7ec";
+  else if (poly === "30") colorToUse = "#fff7ec";
+  else if (poly === "30") colorToUse = "#fdd49e";
+  else if (poly === "40") colorToUse = "#fdbb84";
+  else if (poly === "50") colorToUse = "#fc8d59";
+  else if (poly === "60") colorToUse = "#ef6548";
+  else if (poly === "70") colorToUse = "#d7301f";
+  else if (poly === "80") colorToUse = "#b30000";
+  else if (poly === "90") colorToUse = "#7f0000";
+  else if (poly === "100") colorToUse = "#7f0000";
   else colorToUse = "#FF00FF05";
             
   return {
@@ -500,17 +499,16 @@ function subteStyleL(feature) {
 function subteStyleXL(feature) {
   var colorToUse;
   var poly = feature.properties.XL_Term;
-            
-  if (poly === "20") colorToUse = "#1F88C7";
-  else if (poly === "30") colorToUse = "#1F88C7";
-  else if (poly === "30") colorToUse = "#63A1B5";
-  else if (poly === "40") colorToUse = "#93B79F";
-  else if (poly === "50") colorToUse = "#BECD85";
-  else if (poly === "60") colorToUse = "#E8E56D";
-  else if (poly === "70") colorToUse = "#FF8B2D";
-  else if (poly === "80") colorToUse = "#FF621E";
-  else if (poly === "90") colorToUse = "#FF2512";
-  else if (poly === "100") colorToUse = "#FF2512";
+  if (poly === "20") colorToUse = "#fff7ec";
+  else if (poly === "30") colorToUse = "#fff7ec";
+  else if (poly === "30") colorToUse = "#fdd49e";
+  else if (poly === "40") colorToUse = "#fdbb84";
+  else if (poly === "50") colorToUse = "#fc8d59";
+  else if (poly === "60") colorToUse = "#ef6548";
+  else if (poly === "70") colorToUse = "#d7301f";
+  else if (poly === "80") colorToUse = "#b30000";
+  else if (poly === "90") colorToUse = "#7f0000";
+  else if (poly === "100") colorToUse = "#7f0000";
   else colorToUse = "#FF00FF05";
             
   return {
