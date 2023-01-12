@@ -299,3 +299,11 @@ li li{
 	-moz-transform: rotate(180deg);
 	transform: rotate(180deg);
 } 
+select {
+      font-size:20px;
+    font-weight:bold;
+}
+option {
+    font-size:18px;
+    font-weight:bold;
+}

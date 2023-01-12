@@ -186,7 +186,7 @@ function resolveLocationId(locationId)
 			var marker = L.marker([ltpt, lnpt],{ draggable: true});	
 			marker.addTo(mymap);
 			mymap.flyTo([ltpt, lnpt], 13);	
-			marker.bindPopup("<b>Your Address</b><br>This is the address you entered.").openPopup();
+			marker.bindPopup("<b>Your Location</b>").openPopup();
 				
 			} //end keep
 			
@@ -238,7 +238,7 @@ function resolveLocationId(locationId)
 <div class="hero-image"></div>
 
 		<h1> Agri-Weather </h1>
-		<p> This web page is intended to aid farmers in determining optimal conditions for the application of fertilization, based on the weather forecast.
+		<p> This web page is intended to aid farmers in determining optimal conditions for the application of fertilization, based on the weather forecast. <em>**the data shown is for illustration purposes & disucssion only and does not reflect actual conditions.</em>
 		<p>
 		<button type="button" onclick="alert('a form will popup for email and location alerts')">Subscribe to Notifications</button>
 
