@@ -173,7 +173,7 @@ function resolveLocationId(locationId)
             });
         }
 
-        function addMarkerOntoMap(response)
+     function addMarkerOntoMap(response)
         {
             var loc = response.Response.View[0].Result[0].Location.DisplayPosition;
           //  map.addObject(new H.map.Marker({lat:loc.Latitude,lng:loc.Longitude}));
@@ -184,13 +184,12 @@ function resolveLocationId(locationId)
             lnpt = loc.Longitude
 			
 			var marker = L.marker([ltpt, lnpt],{ draggable: true});	
-			marker.addTo(rv-map);
-			rv-map.flyTo([ltpt, lnpt], 13);	
-			marker.bindPopup("<b>Your Address</b><br>Click inside a BLUE box to view a Flood Map.").openPopup();
+			marker.addTo(mymap);
+			mymap.flyTo([ltpt, lnpt], 13);	
+			marker.bindPopup("<b>Your Address</b><br>This is the address you entered.").openPopup();
 				
 			} //end keep
 			
-
 	function onGeocodeFailed(response)
         {
             // TODO
