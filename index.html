@@ -186,7 +186,7 @@ function resolveLocationId(locationId)
 			var marker = L.marker([ltpt, lnpt],{ draggable: true});	
 			marker.addTo(mymap);
 			mymap.flyTo([ltpt, lnpt], 13);	
-			marker.bindPopup("<b>Your Location</b>").openPopup();
+			marker.bindPopup('<b>Your Location: </b> <p> Longitude: ' + lnpt + '<p> Latitude: ' +ltpt +  '</b>').openPopup();
 				
 			} //end keep
 			
