@@ -8,7 +8,7 @@
 
 /* id for main map container */
 		#mapid {
-		  height: 75%;
+		  height: 100%;
 		  width: 100%;
 		  position: center;
 		}
@@ -50,7 +50,7 @@ body {
   display:inline-block;
   background-color: #FCFDFE;
   border: 1px solid #fff293;
-  height: 600px;
+  height: 1000px;
 }
 .rightbar {
   width:70%;
