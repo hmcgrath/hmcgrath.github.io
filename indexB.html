@@ -211,7 +211,7 @@ function resolveLocationId(locationId)
   background-image:url("https://hmcgrath.github.io/header_img.png");
 
   /* Set a specific height */
-  height: 50%;
+  height: 55%;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
@@ -221,7 +221,7 @@ function resolveLocationId(locationId)
 }
 
 		#leaflet-container {
-			height: 400;
+			height: 600;
 			width: 400;
 			max-width: 100%;
 			max-height: 75%;
@@ -295,7 +295,7 @@ function resolveLocationId(locationId)
       <div class="panel-body">
       <h2> Probability of Runoff (%)</h2>
 	   <p>
-	   <img src="https://hmcgrath.github.io/legend/legend2.png" alt="legend" width="400" height="80">
+	   <img src="https://hmcgrath.github.io/legend/growers10.png" alt="legend" width="400" height="80">
 </ul>
       </div>
     </div>
@@ -423,16 +423,17 @@ Radar precipitation rate (Rain)
 function subteStyle(feature) {
   var colorToUse;
   var poly = feature.properties.Sterm;
-  if (poly === "20") colorToUse = "#fff7ec";
-  else if (poly === "30") colorToUse = "#fff7ec";
-  else if (poly === "30") colorToUse = "#fdd49e";
-  else if (poly === "40") colorToUse = "#fdbb84";
-  else if (poly === "50") colorToUse = "#fc8d59";
-  else if (poly === "60") colorToUse = "#ef6548";
-  else if (poly === "70") colorToUse = "#d7301f";
-  else if (poly === "80") colorToUse = "#b30000";
-  else if (poly === "90") colorToUse = "#7f0000";
-  else if (poly === "100") colorToUse = "#7f0000";
+  if (poly === "10") colorToUse = "#00CCFF";
+  else if (poly === "20") colorToUse = "#0098CC";
+  else if (poly === "30") colorToUse = "#006698";
+  else if (poly === "40") colorToUse = "#FFFF00";
+  else if (poly === "50") colorToUse = "#FFCC00";
+  else if (poly === "60") colorToUse = "#FF9933";
+  else if (poly === "70") colorToUse = "#FF6666";
+  else if (poly === "80") colorToUse = "#FF0000";
+  else if (poly === "90") colorToUse = "#CC0000";
+  else if (poly === "100") colorToUse = "#990000";
+  else if (poly === "110") colorToUse = "#610000";
   else colorToUse = "#FF00FF05";
             
   return {
@@ -448,16 +449,17 @@ function subteStyle(feature) {
 function subteStyleM(feature) {
   var colorToUse;
   var poly = feature.properties.MTerm;
-  if (poly === "20") colorToUse = "#fff7ec";
-  else if (poly === "30") colorToUse = "#fff7ec";
-  else if (poly === "30") colorToUse = "#fdd49e";
-  else if (poly === "40") colorToUse = "#fdbb84";
-  else if (poly === "50") colorToUse = "#fc8d59";
-  else if (poly === "60") colorToUse = "#ef6548";
-  else if (poly === "70") colorToUse = "#d7301f";
-  else if (poly === "80") colorToUse = "#b30000";
-  else if (poly === "90") colorToUse = "#7f0000";
-  else if (poly === "100") colorToUse = "#7f0000";
+  if (poly === "10") colorToUse = "#00CCFF";
+  else if (poly === "20") colorToUse = "#0098CC";
+  else if (poly === "30") colorToUse = "#006698";
+  else if (poly === "40") colorToUse = "#FFFF00";
+  else if (poly === "50") colorToUse = "#FFCC00";
+  else if (poly === "60") colorToUse = "#FF9933";
+  else if (poly === "70") colorToUse = "#FF6666";
+  else if (poly === "80") colorToUse = "#FF0000";
+  else if (poly === "90") colorToUse = "#CC0000";
+  else if (poly === "100") colorToUse = "#990000";
+  else if (poly === "110") colorToUse = "#610000";
   else colorToUse = "#FF00FF05";
             
   return {
@@ -473,16 +475,17 @@ function subteStyleM(feature) {
 function subteStyleL(feature) {
   var colorToUse;
   var poly = feature.properties.LTerm;
-  if (poly === "20") colorToUse = "#fff7ec";
-  else if (poly === "30") colorToUse = "#fff7ec";
-  else if (poly === "30") colorToUse = "#fdd49e";
-  else if (poly === "40") colorToUse = "#fdbb84";
-  else if (poly === "50") colorToUse = "#fc8d59";
-  else if (poly === "60") colorToUse = "#ef6548";
-  else if (poly === "70") colorToUse = "#d7301f";
-  else if (poly === "80") colorToUse = "#b30000";
-  else if (poly === "90") colorToUse = "#7f0000";
-  else if (poly === "100") colorToUse = "#7f0000";
+  if (poly === "10") colorToUse = "#00CCFF";
+  else if (poly === "20") colorToUse = "#0098CC";
+  else if (poly === "30") colorToUse = "#006698";
+  else if (poly === "40") colorToUse = "#FFFF00";
+  else if (poly === "50") colorToUse = "#FFCC00";
+  else if (poly === "60") colorToUse = "#FF9933";
+  else if (poly === "70") colorToUse = "#FF6666";
+  else if (poly === "80") colorToUse = "#FF0000";
+  else if (poly === "90") colorToUse = "#CC0000";
+  else if (poly === "100") colorToUse = "#990000";
+  else if (poly === "110") colorToUse = "#610000";
   else colorToUse = "#FF00FF05";
             
   return {
@@ -498,16 +501,17 @@ function subteStyleL(feature) {
 function subteStyleXL(feature) {
   var colorToUse;
   var poly = feature.properties.XL_Term;
-  if (poly === "20") colorToUse = "#fff7ec";
-  else if (poly === "30") colorToUse = "#fff7ec";
-  else if (poly === "30") colorToUse = "#fdd49e";
-  else if (poly === "40") colorToUse = "#fdbb84";
-  else if (poly === "50") colorToUse = "#fc8d59";
-  else if (poly === "60") colorToUse = "#ef6548";
-  else if (poly === "70") colorToUse = "#d7301f";
-  else if (poly === "80") colorToUse = "#b30000";
-  else if (poly === "90") colorToUse = "#7f0000";
-  else if (poly === "100") colorToUse = "#7f0000";
+  if (poly === "10") colorToUse = "#00CCFF";
+  else if (poly === "20") colorToUse = "#0098CC";
+  else if (poly === "30") colorToUse = "#006698";
+  else if (poly === "40") colorToUse = "#FFFF00";
+  else if (poly === "50") colorToUse = "#FFCC00";
+  else if (poly === "60") colorToUse = "#FF9933";
+  else if (poly === "70") colorToUse = "#FF6666";
+  else if (poly === "80") colorToUse = "#FF0000";
+  else if (poly === "90") colorToUse = "#CC0000";
+  else if (poly === "100") colorToUse = "#990000";
+  else if (poly === "110") colorToUse = "#610000";
   else colorToUse = "#FF00FF05";
             
   return {
@@ -589,7 +593,7 @@ var selectLayers = {
 var legend = L.control({position: 'topleft'});
 legend.onAdd = function (mymap) {
     var div = L.DomUtil.create('div', 'info legend');
-    div.innerHTML = '<select><option value="geojsonLayer">Today</option><option value="geojsonLayerM">Tomorrow </option><option value="geojsonLayerL">7 day forecast</option><option value="geojsonLayerXL">10 day forecast</option></select>';
+    div.innerHTML = '<select><option value="geojsonLayer">Today </option><option value="geojsonLayerM">Short Term (3-7 days) </option><option value="geojsonLayerL">10 day forecast</option><option value="geojsonLayerXL">Next Week forecast</option></select>';
     L.DomEvent.disableClickPropagation(div);
     L.DomEvent.on(div,'change',function(e){
      	var select = e.target;
@@ -605,6 +609,8 @@ legend.addTo(mymap);
 
 		</script>
 </div> 
+
+
 </body>
 
 </html>
