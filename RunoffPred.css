@@ -55,10 +55,10 @@ body {
 .rightbar {
   width:70%;
    float:right;
-   height:10in;
+   height:800px;
    padding-right: 2px
   display:inline-block;
-  height: 600px;
+  height: 800px;
    background-color: #FCFDFE;
   border: 1px solid #fff293;
 }
